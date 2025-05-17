@@ -1,1 +1,30 @@
-<p>main-layout works!</p>
+<mat-drawer-container class="main-container">
+  <mat-drawer mode="side" opened class="main-side" [disableClose]="true"
+    ><div class="main-title">
+      <mat-icon>menu</mat-icon> <span>Умные роботы IoT</span>
+    </div>
+    <nav class="main-nav">
+      @for (navItem of navList; track navItem; let isLast = $last) {
+      <mat-divider></mat-divider>
+      <button
+        class="main-button"
+        mat-button
+        [routerLink]="navItem.path"
+        routerLinkActive="router-link-active"
+        [routerLinkActiveOptions]="{ exact: true }"
+      >
+        <mat-icon> {{ navItem.icon }}</mat-icon> {{ navItem.name }}
+      </button>
+      @if (isLast){
+      <mat-divider></mat-divider>
+      } }
+    </nav></mat-drawer
+  >
+  <mat-drawer-content>
+    <main class="main-content">
+      <div class="main-content-wrapper">
+        <router-outlet />
+      </div>
+    </main>
+  </mat-drawer-content>
+</mat-drawer-container>

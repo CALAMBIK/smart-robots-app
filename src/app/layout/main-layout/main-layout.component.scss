@@ -1,0 +1,52 @@
+:host {
+  height: 100%;
+  display: block;
+}
+
+.main {
+  &-container {
+    width: auto;
+    height: 100%;
+    background: #f6f3f3;
+    min-width: 1240px;
+  }
+
+  &-side {
+    border-radius: 0;
+    border-right: 1px solid rgb(144, 144, 144);
+    background: #f6f3f3;
+  }
+
+  &-title {
+    display: flex;
+    margin: 30px 20px;
+    align-items: center;
+    justify-content: last baseline;
+    gap: 20px;
+    font-size: 24px;
+  }
+
+  &-nav {
+    display: flex;
+    flex-direction: column;
+  }
+
+  &-button {
+    font-size: 16px;
+    height: 70px;
+    border-radius: 0;
+  }
+
+  &-content {
+    display: flex;
+    flex: 1 1 auto;
+
+    &-wrapper {
+      width: 100%;
+    }
+  }
+}
+
+.router-link-active {
+  background-color: rgb(253, 217, 223);
+}
