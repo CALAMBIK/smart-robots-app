@@ -1,1 +1,14 @@
-<p>galery works!</p>
+<div class="wrapper">
+  <h2 class="title">Галерея IoT-Роботов</h2>
+  <div class="galery">
+    <div class="slider-container">
+      <button class="slider-btn prev" (click)="prevSlide()">❮</button>
+
+      <div class="slider">
+        <img [src]="imgs[currentIndex]" alt="Слайд" class="slide" />
+      </div>
+
+      <button class="slider-btn next" (click)="nextSlide()">❯</button>
+    </div>
+  </div>
+</div>
