@@ -1,0 +1,57 @@
+:host {
+  display: block;
+  padding: 24px;
+  color: #333;
+}
+
+.hero {
+  text-align: center;
+  max-width: 900px;
+  margin: 0 auto 48px;
+
+  h1 {
+    font-size: 40px;
+    margin-bottom: 20px;
+  }
+
+  p {
+    font-size: 18px;
+    color: #555;
+    margin-bottom: 16px;
+    line-height: 1.6;
+  }
+}
+
+.cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 24px;
+
+  .card {
+    cursor: pointer;
+    transition: transform 0.3s ease;
+    text-align: center;
+    padding: 20px;
+    min-height: 280px;
+
+    mat-icon {
+      font-size: 24px;
+      color: #3f51b5;
+    }
+
+    h3 {
+      font-size: 20px;
+      margin-bottom: 12px;
+    }
+
+    p {
+      font-size: 16px;
+      color: #666;
+    }
+
+    &:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
+    }
+  }
+}
