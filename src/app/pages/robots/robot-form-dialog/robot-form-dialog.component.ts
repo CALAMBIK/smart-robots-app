@@ -51,6 +51,9 @@ export class RobotFormDialog {
   }
 
   onCreateOrEdit() {
-    this.dialogRef.close(this.formGroup.value);
+    this.dialogRef.close({
+      id: new Date().valueOf(),
+      ...this.formGroup.value,
+    });
   }
 }
