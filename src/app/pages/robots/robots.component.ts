@@ -13,8 +13,6 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatIconModule } from '@angular/material/icon';
 import { MatDialog, MatDialogModule } from '@angular/material/dialog';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { MatInputModule } from '@angular/material/input';
-import { MatChipsModule } from '@angular/material/chips';
 import { RobotsStore } from '../../stores/robot.store';
 import { Robots } from '../../entities/robots';
 import { RobotFormDialog } from './robot-form-dialog/robot-form-dialog.component';
@@ -30,8 +28,6 @@ import { RobotFormDialog } from './robot-form-dialog/robot-form-dialog.component
     MatDialogModule,
     FormsModule,
     ReactiveFormsModule,
-    MatInputModule,
-    MatChipsModule,
   ],
   templateUrl: './robots.component.html',
   styleUrls: ['./robots.component.scss'],
@@ -52,7 +48,7 @@ export class RobotsComponent {
 
   editRobot(robot: Robots) {
     const dialogRef = this.dialog.open(RobotFormDialog, {
-      data: { name: robot.name, type: robot.type, status: robot.status },
+      data: { ...robot },
     });
 
     dialogRef.afterClosed().subscribe((result: Robots) => {
