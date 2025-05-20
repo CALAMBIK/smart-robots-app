@@ -43,7 +43,7 @@ export class DevicesFormDialogComponent {
       this.formGroup.patchValue({
         name: this.data.name ?? '',
         type: this.data.type ?? '',
-        status: this.data.status ?? 'active',
+        status: this.data.status ?? 'online',
         ipAddress: this.data.ipAddress ?? '',
         firmwareVersion: this.data.firmwareVersion ?? '',
       });
