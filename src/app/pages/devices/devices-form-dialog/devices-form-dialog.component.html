@@ -1,0 +1,71 @@
+<form class="example-form" [formGroup]="formGroup">
+  <mat-form-field class="example-full-width">
+    <mat-label>Название</mat-label>
+    <input
+      type="text"
+      matInput
+      formControlName="name"
+      placeholder="Метеостанция WX-5"
+    />
+    @if (formGroup.controls.name.hasError('required')) {
+    <mat-error>Название <strong>Обязательно</strong></mat-error>
+    }
+  </mat-form-field>
+  <mat-form-field class="example-full-width">
+    <mat-label>Тип</mat-label>
+    <input
+      type="text"
+      matInput
+      formControlName="type"
+      placeholder="Аэро-дрон"
+    />
+    @if (formGroup.controls.name.hasError('required')) {
+    <mat-error>Тип <strong>Обязателен</strong></mat-error>
+    }
+  </mat-form-field>
+  <mat-form-field class="example-full-width">
+    <mat-label>Статус</mat-label>
+    <mat-select formControlName="status">
+      <mat-option value="active">active</mat-option>
+      <mat-option value="offline">offline</mat-option>
+      <mat-option value="maintenance">maintenance</mat-option>
+    </mat-select>
+    @if (formGroup.controls.status.hasError('required')) {
+    <mat-error>Статус <strong>обязателен</strong></mat-error>
+    }
+  </mat-form-field>
+  <mat-form-field class="example-full-width">
+    <mat-label>IP Адресс</mat-label>
+    <input
+      type="text"
+      matInput
+      formControlName="ipAddress"
+      placeholder="192.168.1.42"
+    />
+    @if (formGroup.controls.name.hasError('required')) {
+    <mat-error>IP Адресс <strong>Обязателен</strong></mat-error>
+    }
+  </mat-form-field>
+  <mat-form-field class="example-full-width">
+    <mat-label>Версия</mat-label>
+    <input
+      type="text"
+      matInput
+      formControlName="firmwareVersion"
+      placeholder="1.0.0"
+    />
+    @if (formGroup.controls.name.hasError('required')) {
+    <mat-error>Версия <strong>Обязательна</strong></mat-error>
+    }
+  </mat-form-field>
+  <div class="actions">
+    <button
+      mat-raised-button
+      [disabled]="formGroup.invalid"
+      (click)="onCreateOrEdit()"
+    >
+      {{ data?.name ? "Сохранить" : "Создать" }}
+    </button>
+    <button mat-raised-button (click)="onNoClick()">Отменить</button>
+  </div>
+</form>
