@@ -28,13 +28,6 @@ export const routes: Routes = [
           ),
       },
       {
-        path: 'analytics',
-        loadComponent: () =>
-          import('./pages/analytics/analytics.component').then(
-            (c) => c.AnalyticsComponent
-          ),
-      },
-      {
         path: 'gallery',
         loadComponent: () =>
           import('./pages/galery/galery.component').then(
@@ -46,13 +39,6 @@ export const routes: Routes = [
         loadComponent: () =>
           import('./pages/contact/contact.component').then(
             (c) => c.ContactComponent
-          ),
-      },
-      {
-        path: 'settings',
-        loadComponent: () =>
-          import('./pages/settings/settings.component').then(
-            (c) => c.SettingsComponent
           ),
       },
     ],

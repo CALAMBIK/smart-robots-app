@@ -33,9 +33,7 @@ export class MainLayoutComponent {
     { path: '', name: 'Главная', icon: 'home' },
     { path: 'robots', name: 'Роботы', icon: 'smart_toy' },
     { path: 'devices', name: 'Устройства', icon: 'sensors' },
-    { path: 'analytics', name: 'Аналитика', icon: 'bar_chart' },
     { path: 'gallery', name: 'Галерея', icon: 'photo_library' },
     { path: 'contact', name: 'Обратная связь', icon: 'contact_mail' },
-    { path: 'settings', name: 'Настройки', icon: 'settings' },
   ];
 }
