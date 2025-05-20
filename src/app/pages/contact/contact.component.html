@@ -1,1 +1,84 @@
-<p>contact works!</p>
+<h2 class="title">Обратная связь</h2>
+<form class="example-form" [formGroup]="formGroup">
+  <mat-form-field class="example-full-width">
+    <mat-label>Имя пользователя</mat-label>
+    <input
+      type="text"
+      matInput
+      formControlName="name"
+      placeholder="Александр Колотов"
+    />
+    @if (formGroup.controls.name.hasError('required')) {
+    <mat-error>Имя пользователя <strong>обязательно</strong></mat-error>
+    }
+  </mat-form-field>
+  <mat-form-field class="example-full-width">
+    <mat-label>Email</mat-label>
+    <input
+      type="email"
+      matInput
+      formControlName="email"
+      placeholder="kolotov@gmail.com"
+    />
+    @if (formGroup.controls.email.hasError('required')) {
+    <mat-error>Email <strong>Обязателен</strong></mat-error>
+    }@else if (formGroup.controls.email.hasError('email')){
+    <mat-error>Email <strong>некорректен</strong></mat-error>
+    }
+  </mat-form-field>
+  <mat-form-field class="example-full-width">
+    <mat-label>Telegram</mat-label>
+    <input
+      type="text"
+      matInput
+      formControlName="telegram"
+      placeholder="@Kolotov"
+    />
+    @if (formGroup.controls.telegram.hasError('required')) {
+    <mat-error>Email <strong>Обязателен</strong></mat-error>
+    }@else if (formGroup.controls.telegram.hasError('pattern')) {
+    <mat-error>Введите <strong>корректный</strong> Telegram</mat-error>
+    }
+  </mat-form-field>
+  <mat-form-field class="example-full-width">
+    <mat-label>Тип обращения</mat-label>
+    <mat-select formControlName="type">
+      <mat-option value="tech-problem">Техническая проблема</mat-option>
+      <mat-option value="api">Вопрос по интеграции API</mat-option>
+      <mat-option value="func">Предложение по функционалу</mat-option>
+      <mat-option value="request"
+        >Запрос на коммерческое сотрудничество</mat-option
+      >
+      <mat-option value="review">Отзыв о платформе</mat-option>
+    </mat-select>
+    @if (formGroup.controls.type.hasError('required')) {
+    <mat-error>Тип <strong>обязателен</strong></mat-error>
+    }
+  </mat-form-field>
+  <div>
+    <label>Опыт работы с IoT: </label>
+    <br />
+    <mat-radio-group formControlName="experience">
+      <mat-radio-button value="new"
+        >Новичок (только начинаю разбираться)</mat-radio-button
+      >
+      <mat-radio-button value="pro">Продвинутый пользователь</mat-radio-button>
+      <mat-radio-button value="pro-pro"
+        >Разработчик/системный интегратор</mat-radio-button
+      >
+    </mat-radio-group>
+  </div>
+  <mat-form-field>
+    <mat-label>Описание</mat-label>
+    <textarea matInput formControlName="description"></textarea>
+  </mat-form-field>
+  <div class="actions">
+    <button
+      mat-raised-button
+      [disabled]="formGroup.invalid"
+      (click)="onClick()"
+    >
+      Отправить
+    </button>
+  </div>
+</form>
