@@ -8,7 +8,7 @@
       placeholder="Мегаробот"
     />
     @if (formGroup.controls.name.hasError('required')) {
-    <mat-error>Название <strong>Обязательно</strong></mat-error>
+    <mat-error>Название <strong>обязательно</strong></mat-error>
     }
   </mat-form-field>
   <mat-form-field class="example-full-width">
@@ -19,8 +19,8 @@
       formControlName="type"
       placeholder="Носильщик"
     />
-    @if (formGroup.controls.name.hasError('required')) {
-    <mat-error>Тип <strong>Обязателен</strong></mat-error>
+    @if (formGroup.controls.type.hasError('required')) {
+    <mat-error>Тип <strong>обязателен</strong></mat-error>
     }
   </mat-form-field>
   <mat-form-field class="example-full-width">
